@@ -23,13 +23,13 @@ public class K {
 			int valgInt = Integer.parseInt(valg);
 			switch(valgInt) {
 			case 1:
-				System.out.println("Sender FULL");
+				System.out.println("Sender FULL. Svar:");
 				break;
 			case 2:
-				System.out.println("Sender DATE");
+				System.out.println("Sender DATE. Svar:");
 				break;
 			case 3:
-				System.out.println("Sender TIME");
+				System.out.println("Sender TIME. Svar:");
 				break;
 			case 4:
 				System.out.println("Sender CLOSE");
