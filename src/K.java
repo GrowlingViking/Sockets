@@ -10,7 +10,7 @@ public class K {
 
 		BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
 
-		Socket clientSocket = new Socket("127.0.0.1", 1337);
+		Socket clientSocket = new Socket("10.0.0.64", 1337);
 
 		DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 
@@ -21,6 +21,23 @@ public class K {
 			System.out.println("Velg ein melding å senda: 1. FULL  2. DATE  3. TIME  4. CLOSE ");
 			valg = inFromUser.readLine();
 			int valgInt = Integer.parseInt(valg);
+			switch(valgInt) {
+			case 1:
+				System.out.println("Sender FULL");
+				break;
+			case 2:
+				System.out.println("Sender DATE");
+				break;
+			case 3:
+				System.out.println("Sender TIME");
+				break;
+			case 4:
+				System.out.println("Sender CLOSE");
+				break;
+			default:
+				System.out.println("Sender " + valgInt);
+				break;
+			}
 			outToServer.write(valgInt);
 
 			if (valgInt == 4) {
@@ -29,7 +46,6 @@ public class K {
 				serverSvar = inFromServer.readLine();
 				System.out.println(serverSvar);
 			}
-			
 		}
 		clientSocket.close();
 		System.out.println("Connection closed");
