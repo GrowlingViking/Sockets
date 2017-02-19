@@ -1,7 +1,7 @@
 import java.net.*;
 import java.io.*;
 
-public class K {
+public class Klient {
 
 	public static void main(String[] args) throws Exception {
 		String valg;
@@ -10,7 +10,7 @@ public class K {
 
 		BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
 
-		Socket clientSocket = new Socket("10.0.0.64", 1337);
+		Socket clientSocket = new Socket("127.0.0.1", 1337);
 
 		DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 
