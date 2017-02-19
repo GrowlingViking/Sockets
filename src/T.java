@@ -25,6 +25,7 @@ public class T {
 				Date date = new Date();
 				switch (klientValg) {
 				case 1: // FULL
+					System.out.println("Motatt melding: FULL");
 					SimpleDateFormat dfFull = new SimpleDateFormat("MMMMM yyyy HH:mm:ss");
 					svar = dfFull.format(date);
 					outToClient.writeBytes(svar + '\n');
@@ -32,6 +33,7 @@ public class T {
 					System.out.println("Sendt FULL dato"); 
 					break;
 				case 2:// DATE
+					System.out.println("Motatt melding: DATE");
 					SimpleDateFormat dfDate = new SimpleDateFormat("MMMMM yyyy");
 					svar = dfDate.format(date);
 					outToClient.writeBytes(svar + '\n');
@@ -39,6 +41,7 @@ public class T {
 					System.out.println("Sendt DATE dato");
 					break;
 				case 3:// TIME
+					System.out.println("Motatt melding: TIME");
 					SimpleDateFormat dfTime = new SimpleDateFormat("HH:mm:ss");
 					svar = dfTime.format(date);
 					outToClient.writeBytes(svar + '\n');
@@ -46,9 +49,11 @@ public class T {
 					System.out.println("Sendt TIME dato");
 					break;
 				case 4:
+					System.out.println("Motatt melding: CLOSE");
 					klientRunning = false;
 					break;
 				default:
+					System.out.println("Motatt melding: " + klientValg);
 					System.out.println("ugyldig valg: " + klientValg);
 					svar = "Ugyldig valg: " + klientValg;
 					outToClient.writeBytes(svar + '\n');// invalid handling
