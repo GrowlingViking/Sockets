@@ -21,23 +21,6 @@ public class Klient {
 			System.out.println("Velg ein melding å senda: 1. FULL  2. DATE  3. TIME  4. CLOSE ");
 			valg = inFromUser.readLine();
 			int valgInt = Integer.parseInt(valg);
-			switch(valgInt) {
-			case 1:
-				System.out.println("Sender FULL. Svar:");
-				break;
-			case 2:
-				System.out.println("Sender DATE. Svar:");
-				break;
-			case 3:
-				System.out.println("Sender TIME. Svar:");
-				break;
-			case 4:
-				System.out.println("Sender CLOSE");
-				break;
-			default:
-				System.out.println("Sender " + valgInt);
-				break;
-			}
 			outToServer.write(valgInt);
 
 			if (valgInt == 4) {
